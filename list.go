@@ -12,6 +12,22 @@ func main()  {
 }
 
 // 链表中环的检测
+// 1. 使用Set直接判断是否重复，Set的O(1)时间复杂度，遍历是O(n)
+// 2. 快慢指针
+func hasCycle(head *ListNode) bool {
+	if head == nil || head.Next == nil {
+		return false
+	}
+	set := make(map[*ListNode]bool)
+	for head != nil {
+		if set[head] == true {
+			return true
+		}
+		set[head] = true
+		head = head.Next
+	}
+	return false
+}
 
 // 两个有序列表的合并
 
