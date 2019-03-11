@@ -8,7 +8,7 @@ type ListNode struct {
 }
 
 func main()  {
-
+	println(5/2)
 }
 
 // 链表中环的检测
@@ -29,11 +29,50 @@ func hasCycle(head *ListNode) bool {
 	return false
 }
 
+func hasCycle2(head *ListNode) bool {
+	if head == nil || head.Next == nil {
+		return false
+	}
+	slow := head
+	fast := head.Next
+	for slow != fast {
+		if fast == nil || fast.Next == nil {
+			return false
+		}
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	return true
+}
+
 // 两个有序列表的合并
 
 // 删除链表倒数第n个结点
 
 // 求列表的中间结点
+// 1.计数
+// 2.快慢指针
+func middleNode(head *ListNode) *ListNode {
+	s := 0
+	tempNode := head
+	for tempNode != nil {
+		s++
+		tempNode = tempNode.Next
+	}
+	for t := 0; t < s / 2; t++ {
+		head = head.Next
+	}
+	return head
+}
+
+func middleNode2(head *ListNode) *ListNode {
+	slow,fast := head, head
+	for fast != nil && fast.Next != nil {
+		slow = slow.Next
+		fast = fast.Next.Next
+	}
+	return slow
+}
 
 // 交换相邻节点
 func swapPairs(head *ListNode) *ListNode {
