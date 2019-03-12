@@ -46,8 +46,43 @@ func hasCycle2(head *ListNode) bool {
 }
 
 // 两个有序列表的合并
+func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
+	if l1 == nil{
+		return l2
+	}
+	if l2 == nil{
+		return l1
+	}
+	var res *ListNode
+	if l1.Val >= l2.Val{
+		res = l2
+		res.Next = mergeTwoLists(l1,l2.Next)
+	}else{
+		res = l1
+		res.Next = mergeTwoLists(l1.Next,l2)
+	}
+	return res
+}
 
 // 删除链表倒数第n个结点
+func removeNthFromEnd(head *ListNode, n int) *ListNode {
+	preNode := new(ListNode)
+	preNode.Next = head
+	currentNode := head
+	i := 0
+	for currentNode != nil {
+		i++
+		currentNode = currentNode.Next
+	}
+	i -= n
+	currentNode = preNode
+	for i > 0 {
+		i--
+		currentNode = currentNode.Next
+	}
+	currentNode.Next = currentNode.Next.Next
+	return preNode.Next
+}
 
 // 求列表的中间结点
 // 1.计数
