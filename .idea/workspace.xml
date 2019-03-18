@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f799f45f-ad2b-4237-8590-f98252aecb0d" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/recursive.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sort.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/list.md" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -14,12 +13,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="recursive.go" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="recursive.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recursive.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+            <state relative-caret-position="250">
+              <caret line="10" column="28" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sort.go" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sort.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -27,8 +35,17 @@
       <file leaf-file-name="stack.go" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/stack.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="48" column="20" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="20" />
+            <state relative-caret-position="800">
+              <caret line="32" column="29" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="queue.go" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/queue.go">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -55,6 +72,7 @@
         <option value="$PROJECT_DIR$/stack.go" />
         <option value="$PROJECT_DIR$/queue.go" />
         <option value="$PROJECT_DIR$/recursive.go" />
+        <option value="$PROJECT_DIR$/sort.go" />
       </list>
     </option>
   </component>
@@ -78,7 +96,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -90,6 +107,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -115,7 +133,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Go Build.go build recursive.go">
+  <component name="RunManager" selected="Go Build.go build stack.go">
     <configuration name="go build list.go" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
       <module name="leetcode-golang" />
       <working_directory value="$PROJECT_DIR$/" />
@@ -148,8 +166,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Go Build.go build recursive.go" />
         <item itemvalue="Go Build.go build stack.go" />
+        <item itemvalue="Go Build.go build recursive.go" />
         <item itemvalue="Go Build.go build list.go" />
       </list>
     </recent_temporary>
@@ -158,18 +176,18 @@
     <frame x="1280" y="23" width="1280" height="1368" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28325123" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2454844" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32932693" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32932693" />
       <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32932693" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32932693" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -191,9 +209,24 @@
     <MESSAGE value="list." />
     <MESSAGE value="stack." />
     <MESSAGE value="queue." />
-    <option name="LAST_COMMIT_MESSAGE" value="queue." />
+    <MESSAGE value="recursive." />
+    <option name="LAST_COMMIT_MESSAGE" value="recursive." />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/recursive.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="24" column="26" lean-forward="true" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/stack.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/list.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
@@ -271,27 +304,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/list.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="50">
-            <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/list.md" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="6" lean-forward="true" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/queue.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="28" column="49" lean-forward="true" selection-start-line="28" selection-start-column="49" selection-end-line="28" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -302,17 +319,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/queue.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/stack.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="48" column="20" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="20" />
+        <state relative-caret-position="800">
+          <caret line="32" column="29" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/recursive.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="250">
+          <caret line="10" column="28" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sort.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
