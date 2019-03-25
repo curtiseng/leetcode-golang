@@ -1,7 +1,7 @@
 package main
 
 
-
+// 冒泡排序：两个循环，冒泡交换位置
 func bubbleSort(a []int, n int) {
 	if n <= 1 {
 		return
@@ -21,7 +21,8 @@ func bubbleSort(a []int, n int) {
 }
 
 
-
+// 插入排序：分为左右排序好和未排序好两个部分，然后遍历排序好的部分，与右边第一个做比较，
+// 用数据移动的方式将右边第一个数据放入合适的位置。
 func insertionSort(a []int, n int) {
 	if n <= 1 {
 		return
@@ -41,7 +42,7 @@ func insertionSort(a []int, n int) {
 }
 
 
-// 由上到下，快速排序
+// 由上到下，先分区，分区后已然总体有序，然后再处理子问题。快速排序
 func quickSort(a []int) {
 	separateSort(a, 0, len(a)-1)
 }
