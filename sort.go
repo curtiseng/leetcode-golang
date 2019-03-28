@@ -61,6 +61,7 @@ func separateSort(a []int, start int, end int) {
 func partition(a []int, start int, end int) int {
 	// 选取最后一位当对比数字
 	pivot := a[end]
+	// i用来记录比所选数小的位置或者个数
 	var i = start
 	for j := start; j < end; j++ {
 		if a[j] < pivot {
@@ -124,3 +125,35 @@ func merge(a []int, start int, mid int, end int) {
 }
 
 
+// 寻找第K大元素
+func kthLargest(a []int, k int) int{
+	kSeparate(a, 0, len(a)-1, k)
+	return a[k]
+}
+
+func kSeparate(a []int, start int, end int, k int) {
+	i := kPartition(a, start, end)
+	if (i + 1) == k {
+		return
+	}
+	if (i + 1) > k {
+		kSeparate(a, start, i, k)
+	} else {
+		kSeparate(a, i + 1, end, k)
+	}
+}
+
+func kPartition(a []int, start int, end int) int {
+	pivot := a[end]
+	i := start
+	for j := start; j < end; j++ {
+		if a[j] < pivot {
+			if !(i == j) {
+				a[i], a[j] = a[j], a[i]
+			}
+			i++
+		}
+	}
+	a[i], a[end] = a[end], a[i]
+	return i
+}

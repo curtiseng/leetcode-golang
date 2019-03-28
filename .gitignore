@@ -12,7 +12,7 @@
 *.out
 
 # GoLand
-.idea/
+.idea
 *.iml
 *.iws
 *.ipr
