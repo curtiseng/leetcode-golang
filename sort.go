@@ -125,7 +125,7 @@ func merge(a []int, start int, mid int, end int) {
 }
 
 
-// 寻找第K大元素
+// 寻找第K大元素，利用了快排的思想
 func kthLargest(a []int, k int) int{
 	kSeparate(a, 0, len(a)-1, k)
 	return a[k]
