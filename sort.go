@@ -1,21 +1,21 @@
 package main
 
-
 // 冒泡排序：两个循环，冒泡交换位置
+// 因为数组下标以及比较下标为J和J+1，防止越界，内循环的条件为j < n-i-1
 func bubbleSort(a []int, n int) {
 	if n <= 1 {
 		return
 	}
-	for i := range a{
+	for i := 0; i < n; i++ {
 		flag := false
 		for j := 0; j < n-i-1; j++ {
 			if a[j] > a[j+1] {
 				a[j], a[j+1] = a[j+1], a[j]
 				flag = true
 			}
-			if !flag {
-				break
-			}
+		}
+		if !flag {
+			break
 		}
 	}
 }

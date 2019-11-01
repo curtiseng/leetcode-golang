@@ -15,7 +15,7 @@ func main()  {
 	fmt.Println(f(5))
 }
 
-func f(n int) (int) {
+func f(n int) int {
 	if n == 1 {return 1}
 	if n == 2 {return 2}
 	depth += 1

@@ -21,8 +21,8 @@ func main() {
 	fmt.Println(item)
 }
 
-func newStack(n int) *Stack{
-	stack := &Stack{
+func newStack(n int) *Stack {
+	stack := &Stack {
 		items: make([]string, n),
 		count: 0,
 		n:     n,
