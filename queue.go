@@ -1,41 +1,26 @@
 package main
 
-
-type MyCircularDeque struct {
+type CircularDeque struct {
 	items []int
 	n int
 	head int
 	tail int
 }
 
-func Constructor(n int) MyCircularDeque {
-	return MyCircularDeque{
+func NewCircularDeque(n int) CircularDeque {
+	return CircularDeque{
 		make([]int, n+1, n+1),  n+1, 0, 0,
 	}
 }
 
-func (queue *MyCircularDeque) isEmpty() bool {
+func (queue *CircularDeque) isEmpty() bool {
 	if queue.head == queue.tail {
 		return true
 	}
 	return false
 }
 
-func (queue *MyCircularDeque) IsEmpty() bool {
-	if queue.head == queue.tail {
-		return true
-	}
-	return false
-}
-
-func (queue *MyCircularDeque) isFull() bool {
-	if (queue.tail + 1) % queue.n == queue.head {
-		return true
-	}
-	return false
-}
-
-func (queue *MyCircularDeque) IsFull() bool {
+func (queue *CircularDeque) isFull() bool {
 	if (queue.tail + 1) % queue.n == queue.head {
 		return true
 	}
@@ -44,7 +29,7 @@ func (queue *MyCircularDeque) IsFull() bool {
 
 // 如果head = 0, item放在末尾
 // 如果head > 0, item放在前一位置
-func (queue *MyCircularDeque) InsertFront(item int) bool {
+func (queue *CircularDeque) insertFront(item int) bool {
 	if queue.isFull() {
 		return false
 	}
@@ -53,7 +38,7 @@ func (queue *MyCircularDeque) InsertFront(item int) bool {
 	return true
 }
 
-func (queue *MyCircularDeque) DeleteFront() bool {
+func (queue *CircularDeque) deleteFront() bool {
 	if queue.isEmpty() {
 		return false
 	}
@@ -61,7 +46,7 @@ func (queue *MyCircularDeque) DeleteFront() bool {
 	return true
 }
 
-func (queue *MyCircularDeque) InsertLast(item int) bool {
+func (queue *CircularDeque) insertLast(item int) bool {
 	if queue.isFull() {
 		return false
 	}
@@ -70,7 +55,7 @@ func (queue *MyCircularDeque) InsertLast(item int) bool {
 	return true
 }
 
-func (queue *MyCircularDeque) DeleteLast() bool {
+func (queue *CircularDeque) deleteLast() bool {
 	if queue.isEmpty() {
 		return false
 	}
@@ -78,14 +63,14 @@ func (queue *MyCircularDeque) DeleteLast() bool {
 	return true
 }
 
-func (queue *MyCircularDeque) GetFront() int {
+func (queue *CircularDeque) getFront() int {
 	if queue.isEmpty() {
 		return -1
 	}
 	return queue.items[queue.head]
 }
 
-func (queue *MyCircularDeque) GetRear() int {
+func (queue *CircularDeque) getRear() int {
 	if queue.isEmpty() {
 		return -1
 	}
