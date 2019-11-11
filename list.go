@@ -11,6 +11,13 @@ func main()  {
 	println(5/2)
 }
 
+func New(val int) *ListNode {
+	return &ListNode{
+		Val: val,
+		Next: nil,
+	}
+}
+
 // 链表中环的检测
 // 1. 使用Set直接判断是否重复，Set的O(1)时间复杂度，遍历是O(n)
 // 2. 快慢指针
@@ -46,6 +53,8 @@ func hasCycle2(head *ListNode) bool {
 }
 
 // 两个有序列表的合并
+// fn(l1, l2) = l1[0] + fn(l1.Next, l2)  [l1 < l2]
+// fn(l1, l2) = l2[0] + fn(l1, l2.Next)  [l1 >= l2]
 func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 	if l1 == nil{
 		return l2
@@ -62,6 +71,31 @@ func mergeTwoLists(l1 *ListNode, l2 *ListNode) *ListNode {
 		res.Next = mergeTwoLists(l1.Next,l2)
 	}
 	return res
+}
+
+// 迭代法
+func mergeTwoLists2(l1 *ListNode, l2 *ListNode) *ListNode {
+	var preHead = &ListNode{
+		Val: -1,
+		Next: nil,
+	}
+	prev := preHead
+	for l1 != nil && l2 != nil {
+		if l1.Val <= l2.Val {
+			prev.Next = l1
+			l1 = l1.Next
+		} else {
+			prev.Next = l2
+			l2 = l2.Next
+		}
+		prev = prev.Next
+	}
+	if l1 == nil {
+		prev.Next = l2
+	} else {
+		prev.Next = l1
+	}
+	return preHead.Next
 }
 
 // 删除链表倒数第n个结点
