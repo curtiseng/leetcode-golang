@@ -13,14 +13,14 @@ func NewCircularDeque(n int) CircularDeque {
 	}
 }
 
-func (queue *CircularDeque) isEmpty() bool {
+func (queue *CircularDeque) IsEmpty() bool {
 	if queue.head == queue.tail {
 		return true
 	}
 	return false
 }
 
-func (queue *CircularDeque) isFull() bool {
+func (queue *CircularDeque) IsFull() bool {
 	if (queue.tail + 1) % queue.n == queue.head {
 		return true
 	}
@@ -29,8 +29,8 @@ func (queue *CircularDeque) isFull() bool {
 
 // 如果head = 0, item放在末尾
 // 如果head > 0, item放在前一位置
-func (queue *CircularDeque) insertFront(item int) bool {
-	if queue.isFull() {
+func (queue *CircularDeque) InsertFront(item int) bool {
+	if queue.IsFull() {
 		return false
 	}
 	queue.head = (queue.n + queue.head - 1) % queue.n
@@ -38,16 +38,16 @@ func (queue *CircularDeque) insertFront(item int) bool {
 	return true
 }
 
-func (queue *CircularDeque) deleteFront() bool {
-	if queue.isEmpty() {
+func (queue *CircularDeque) DeleteFront() bool {
+	if queue.IsEmpty() {
 		return false
 	}
 	queue.head = (queue.head + 1) % queue.n
 	return true
 }
 
-func (queue *CircularDeque) insertLast(item int) bool {
-	if queue.isFull() {
+func (queue *CircularDeque) InsertLast(item int) bool {
+	if queue.IsFull() {
 		return false
 	}
 	queue.items[queue.tail] = item
@@ -55,23 +55,23 @@ func (queue *CircularDeque) insertLast(item int) bool {
 	return true
 }
 
-func (queue *CircularDeque) deleteLast() bool {
-	if queue.isEmpty() {
+func (queue *CircularDeque) DeleteLast() bool {
+	if queue.IsEmpty() {
 		return false
 	}
 	queue.tail = (queue.n + queue.tail - 1) % queue.n
 	return true
 }
 
-func (queue *CircularDeque) getFront() int {
-	if queue.isEmpty() {
+func (queue *CircularDeque) GetFront() int {
+	if queue.IsEmpty() {
 		return -1
 	}
 	return queue.items[queue.head]
 }
 
-func (queue *CircularDeque) getRear() int {
-	if queue.isEmpty() {
+func (queue *CircularDeque) GetRear() int {
+	if queue.IsEmpty() {
 		return -1
 	}
 	return queue.items[(queue.n + queue.tail -1) % queue.n]
