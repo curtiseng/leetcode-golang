@@ -1,32 +1,68 @@
 package main
 
-import "fmt"
 
-type CircularQueue struct {
-	items []string
+type MyCircularDeque struct {
+	items []int
 	n int
 	head int
 	tail int
 }
 
-func newCircularQueue(n int) *CircularQueue {
-	if n == 0 {
-		return nil
-	}
-	return &CircularQueue {
-		make([]string, n), n, 0, 0,
+func Constructor(n int) MyCircularDeque {
+	return MyCircularDeque{
+		make([]int, n+1, n+1),  n+1, 0, 0,
 	}
 }
 
-func (queue *CircularQueue) isEmpty() bool {
+func (queue *MyCircularDeque) isEmpty() bool {
 	if queue.head == queue.tail {
 		return true
 	}
 	return false
 }
 
-func (queue *CircularQueue) enqueue(item string) bool {
+func (queue *MyCircularDeque) IsEmpty() bool {
+	if queue.head == queue.tail {
+		return true
+	}
+	return false
+}
+
+func (queue *MyCircularDeque) isFull() bool {
 	if (queue.tail + 1) % queue.n == queue.head {
+		return true
+	}
+	return false
+}
+
+func (queue *MyCircularDeque) IsFull() bool {
+	if (queue.tail + 1) % queue.n == queue.head {
+		return true
+	}
+	return false
+}
+
+// 如果head = 0, item放在末尾
+// 如果head > 0, item放在前一位置
+func (queue *MyCircularDeque) InsertFront(item int) bool {
+	if queue.isFull() {
+		return false
+	}
+	queue.head = (queue.n + queue.head - 1) % queue.n
+	queue.items[queue.head] = item
+	return true
+}
+
+func (queue *MyCircularDeque) DeleteFront() bool {
+	if queue.isEmpty() {
+		return false
+	}
+	queue.head = (queue.head + 1) % queue.n
+	return true
+}
+
+func (queue *MyCircularDeque) InsertLast(item int) bool {
+	if queue.isFull() {
 		return false
 	}
 	queue.items[queue.tail] = item
@@ -34,11 +70,24 @@ func (queue *CircularQueue) enqueue(item string) bool {
 	return true
 }
 
-func (queue *CircularQueue) dequeue() (item string, err error) {
+func (queue *MyCircularDeque) DeleteLast() bool {
 	if queue.isEmpty() {
-		return item, fmt.Errorf("queue is empty")
+		return false
 	}
-	item = queue.items[queue.head]
-	queue.head = (queue.head + 1) % queue.n
-	return item, err
+	queue.tail = (queue.n + queue.tail - 1) % queue.n
+	return true
+}
+
+func (queue *MyCircularDeque) GetFront() int {
+	if queue.isEmpty() {
+		return -1
+	}
+	return queue.items[queue.head]
+}
+
+func (queue *MyCircularDeque) GetRear() int {
+	if queue.isEmpty() {
+		return -1
+	}
+	return queue.items[(queue.n + queue.tail -1) % queue.n]
 }
