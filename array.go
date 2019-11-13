@@ -32,7 +32,7 @@ func rotate(nums []int, k int)  {
 }
 
 // 接雨水
-// 栈实现和找括号有一定的区别
+// 栈实现和找括号有一定的区别，会把左右最小已使用的排除出栈，不一定是对称的
 func trap(height []int) int {
 	stack := NewStack(len(height))
 	var current, ans = 0, 0
