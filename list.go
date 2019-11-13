@@ -7,10 +7,6 @@ type ListNode struct {
 	Next *ListNode // 这里表示Next变量是ListNode型指针
 }
 
-func main()  {
-	println(5/2)
-}
-
 func New(val int) *ListNode {
 	return &ListNode{
 		Val: val,
