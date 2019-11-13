@@ -1,7 +1,5 @@
 package main
 
-import "math"
-
 /**
  * 前指针记录已完成的不重复item，后指针记录下一个不重复值
  * go语言切片是引用传递，但使用append等函数后可能重新分配地址
@@ -20,6 +18,7 @@ func removeDuplicates(nums []int) int {
 	return i+1
 }
 
+// 数组旋转
 func rotate(nums []int, k int)  {
 	k = k % len(nums)
 	for i := 0; i < k; i++  {
@@ -37,8 +36,8 @@ func trap(height []int) int {
 	stack := NewStack(len(height))
 	var current, ans = 0, 0
 	for current < len(height) {
-		for !stack.IsEmpty() && height[current] > stack.Peek() {
-			top := stack.Peek()
+		for !stack.IsEmpty() && height[current] > height[stack.Peek()] {
+			top := height[stack.Peek()]
 			stack.Pop()
 			if stack.IsEmpty() {
 				break
@@ -53,4 +52,5 @@ func trap(height []int) int {
 		stack.Push(current)
 		current += 1
 	}
+	return ans
 }

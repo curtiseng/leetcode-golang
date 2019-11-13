@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 type Stack struct {
 	items []int // 元素
 	count int      // 栈中元素个数
@@ -28,7 +26,6 @@ func (stack *Stack) Push(item int) bool {
 
 func (stack *Stack) Pop() int {
 	if stack.count == 0 {
-		err = fmt.Errorf("stack is null")
 		return -1
 	}
 	item := stack.items[stack.count - 1]
